@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="auth-page">
+
+    <div class="auth-card">
+        <h2>Create account</h2>
+        {% if error %}
+<div class="auth-error">
+    {{ error }}
+</div>
+{% endif %}
+        <form method="POST">
+            <label>Full name</label>
+            <input type="text" placeholder="Your name">
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Create account</button>
+        </form>
+        <div style="margin-top: 40px; text-align: center;">
+    <p style="font-size: 14px; opacity: 0.7; margin-bottom: 12px;">
+        Already have an account?
+    </p>
+    <a href="/signin"
+       style="color: white; font-weight: 500; text-decoration: none; display: inline-block;">
+        Sign in
+    </a>
+</div>
+
+    </div>
+
+</main>
+
+{% endblock %}

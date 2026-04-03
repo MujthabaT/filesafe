@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="dashboard">
+
+    <section class="dashboard-header">
+    <div class="header-left">
+        <h1>Dashboard</h1>
+        <p>Your files are encrypted locally and verified before storage.</p>
+    </div>
+
+    {% if uploaded %}
+    <div class="success-banner">
+        File uploaded successfully
+    </div>
+    {% endif %}
+</section>
+
+
+    <section class="dashboard-grid">
+
+        <!-- UPLOAD CARD -->
+        <div class="dash-card primary-card">
+            <h3>Upload file</h3>
+            <p>
+                Files are encrypted using AES-GCM before leaving your device.
+                Integrity is verified automatically.
+            </p>
+
+            <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Upload</button>
+</form>
+        </div>
+
+        <!-- FILES CARD -->
+        <div class="dash-card">
+            <h3>Your files</h3>
+            {% if files %}
+    <ul class="file-list">
+       {% for f in files %}
+<div style="
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+">
+
+    <span style="flex: 1;">
+        {{ f["filename"] }}
+    </span>
+
+    <a href="{{ url_for('download', file_id=f['id']) }}"
+       style="color: white; text-decoration: none; font-size: 14px;">
+        Download
+    </a>
+
+    <form method="POST"
+          action="{{ url_for('delete_file', file_id=f['id']) }}"
+          style="display: inline;">
+        <button type="submit"
+                title="Delete"
+                style="
+                    background: none;
+                    border: none;
+                    color: rgba(255,255,255,0.6);
+                    font-size: 16px;
+                    cursor: pointer;
+                    line-height: 1;
+                ">
+            ✕
+        </button>
+    </form>
+
+</div>
+{% endfor %}
+    </ul>
+{% else %}
+    <p class="muted">No files uploaded yet.</p>
+    <div class="empty-state">
+        Encrypted files will appear here
+    </div>
+{% endif %}
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}

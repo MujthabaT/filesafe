@@ -1,0 +1,406 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "SF Pro Display", "Segoe UI",
+                 Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: #ffffff;
+    background:
+        radial-gradient(1200px 600px at 15% 20%, #3b1d5a, transparent),
+        radial-gradient(1000px 600px at 80% 60%, #1a3b5a, transparent),
+        linear-gradient(180deg, #0b0b0f, #050507);
+}
+
+/* TOP BAR */
+
+.topbar {
+    height: 64px;
+    padding: 0 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.topbar nav a {
+    margin-left: 28px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.topbar nav .primary {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.12);
+}
+
+/* HERO LAYOUT */
+
+.hero {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 140px 64px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 120px;
+}
+
+/* LEFT PANEL */
+
+.hero-text h1 {
+    font-size: 96px;
+    line-height: 1.02;
+    letter-spacing: -1.4px;
+    font-weight: 600;
+}
+
+.hero-text p {
+    margin-top: 36px;
+    font-size: 22px;
+    max-width: 520px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+}
+
+/* RIGHT PANEL */
+
+.hero-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.upload-rect {
+    width: 640px;
+    height: 460px;
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(34px);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow:
+        0 80px 200px rgba(0,0,0,0.7),
+        inset 0 1px 0 rgba(255,255,255,0.22);
+    cursor: pointer;
+}
+
+.upload-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.upload-details {
+    margin-top: 32px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+}
+
+.upload-details strong {
+    color: #ffffff;
+}
+
+/* AUTH PAGES — LARGE SCALE */
+
+.auth-page {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    width: 560px;
+    padding: 72px 64px;
+    border-radius: 32px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(36px);
+
+    border: 1px solid rgba(255,255,255,0.20);
+
+    box-shadow:
+        0 70px 180px rgba(0,0,0,0.7),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.auth-card h2 {
+    margin-bottom: 48px;
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+}
+
+.auth-card label {
+    display: block;
+    margin-top: 26px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 18px 18px;
+    border-radius: 14px;
+    border: none;
+
+    background: rgba(255,255,255,0.18);
+    color: white;
+
+    font-size: 17px;
+}
+
+.auth-card input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.auth-card button {
+    margin-top: 48px;
+    width: 100%;
+    padding: 18px;
+
+    border-radius: 16px;
+    border: none;
+
+    background: rgba(255,255,255,0.95);
+    color: #000;
+
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 64px;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.dashboard-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+}
+
+.dashboard-header p {
+    margin-top: 14px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+}
+
+.dashboard-grid {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+}
+
+.dash-card {
+    padding: 48px;
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(32px);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 50px 140px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.primary-card {
+    background: rgba(255,255,255,0.14);
+}
+
+.dash-card h3 {
+    font-size: 32px;
+    margin-bottom: 18px;
+    letter-spacing: -0.4px;
+}
+
+.dash-card p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+}
+
+.muted {
+    color: rgba(255,255,255,0.6);
+}
+
+.upload-placeholder {
+    margin-top: 36px;
+    height: 180px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px dashed rgba(255,255,255,0.25);
+
+    opacity: 0.7;
+}
+
+.empty-state {
+    margin-top: 36px;
+    padding: 28px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* UPLOAD FORM */
+
+.upload-form {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.upload-form input[type="file"] {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    opacity: 0.8;
+}
+
+.upload-form button {
+    align-self: flex-start;
+    padding: 14px 24px;
+    border-radius: 14px;
+    border: none;
+
+    background: rgba(255,255,255,0.95);
+    color: #000;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* HOME CTA BUTTON */
+
+.cta-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.95);
+    color: #000;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* FILE LIST */
+
+.file-list {
+    margin-top: 28px;
+    list-style: none;
+}
+
+.file-list li {
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Optional */
+.file-row:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+
+/* SUCCESS FEEDBACK — DASHBOARD */
+
+.success-banner {
+    padding: 16px 28px;
+    border-radius: 18px;
+
+    background: rgba(0, 255, 170, 0.18);
+    border: 1px solid rgba(0, 255, 170, 0.45);
+
+    color: #baffea;
+    font-size: 16px;
+    font-weight: 500;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+/* AUTH ERROR MESSAGE */
+
+.auth-error {
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    border-radius: 14px;
+
+    background: rgba(255, 60, 60, 0.15);
+    border: 1px solid rgba(255, 60, 60, 0.4);
+
+    color: #ffb3b3;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* DASHBOARD UPLOAD BUTTON — FIX SIZE */
+
+.dash-card button {
+    margin-top: 24px;
+    padding: 14px 28px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #ffffff;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 14px;
+
+    cursor: pointer;
+}
+
+.dash-card button:hover {
+    background: rgba(255,255,255,0.22);
+}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="hero">
+
+    <!-- LEFT PANEL -->
+    <section class="hero-text">
+        <h1>
+            Secure file<br>
+            sharing,<br>
+            built for<br>
+            trust.
+        </h1>
+
+        <p>
+            Encrypt files locally using AES-GCM.
+            Control access with RSA key wrapping.
+            The cloud stores only data and never the keys.
+        </p>
+        <div style="margin-top: 48px;">
+            <a href="/dashboard" class="cta-btn">Go to dashboard</a>
+        </div>
+    </section>
+
+    <!-- RIGHT PANEL -->
+    <section class="hero-action">
+
+        <a href="/dashboard" class="upload-link">
+    <div class="upload-rect">
+        <svg width="180" height="180" viewBox="0 0 24 24" fill="none">
+            <path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.9-1.5A3.5 3.5 0 0 1 18 18H7Z"
+                  stroke="white" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 14V9M12 9l-2 2M12 9l2 2"
+                  stroke="white" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</a>
+
+        <div class="upload-details">
+            <p><strong>Upload a file</strong></p>
+            <p>Supported formats: PDF, TXT, JPG, DOC, ZIP, EXE</p>
+            <p>Maximum size limit: 1 GB per file</p>
+            <p>Client side encryption · Integrity verification</p>
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}
